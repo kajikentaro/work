@@ -1,0 +1,20 @@
+#include<stdio.h>
+#define max 3000
+#define target 966
+int main(void){
+  int i,j,k;
+  int iTmp;
+  int jTmp;
+  printf("%dから%dまでで総当たりを試みます\n",-max,max);
+  for(i=-max;i<=max;i++){
+    iTmp=i*i*i;
+    for(j=i;j<=max;j++){
+      jTmp=j*j*j;
+      for(k=j;k<=max;k++){
+	if(iTmp+jTmp+k*k*k==target)printf("(%d,%d,%d),",i,j,k);
+      }
+    }
+  }
+  puts("");
+  return 0;
+}

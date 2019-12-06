@@ -1,0 +1,69 @@
+//課題5d 2019/10/18 19D8104026J 可児憲太郎
+#include<stdio.h>
+#define ARRAY_MAX 8
+void input_array(int a[],int n){
+  int i;
+  for(i=0;i<n;i++){
+    scanf("%d",&a[i]);
+  }
+}
+void print_array(int a[],int n){
+  int i;
+  for(i=0;i<n;i++){
+    printf("%d ",a[i]);
+  }
+  putchar('\n');
+}
+int search(int a[],int n,int x){
+  int i;
+  for(i=0;i<n;i++){
+    if(a[i]==x)return i;
+  }
+  return -1;
+}
+void push(int a[],int *n_ptr,int x){
+  a[*n_ptr]=x;
+  (*n_ptr)++;
+  //囲わないと0かけるn_ptrになります
+}
+void search_all(int a[],int na,int x,int b[],int *nb_ptr){
+  int i;
+  for(i=0;i<na;i++){
+    if(a[i]==x){
+      b[*nb_ptr]=i;
+      (*nb_ptr)++;
+    }
+  }  
+}
+int main(void){
+  printf("データ数nを入力してください:");
+  int na;
+  scanf("%d",&na);
+  int a[ARRAY_MAX];
+  input_array(a,na);
+  printf("整数xを入力してください:");
+  int x;
+  scanf("%d",&x);
+  
+  int b[ARRAY_MAX];
+  int nb=0;
+
+  search_all(a,na,x,b,&nb);
+  if(nb==0){
+    puts("見つからなかった");
+  }else{
+    print_array(b,nb);
+  }
+  return 0;
+}
+/*
+データ数nを入力してください:6
+1
+2
+3
+1
+2
+3
+整数xを入力してください:2
+1 4 
+*/

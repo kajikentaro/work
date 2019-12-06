@@ -1,0 +1,18 @@
+#include<stdio.h>
+#define max 100
+#define target 99
+int main(void){
+  int i,j,k;
+  int iTmp;
+  int jTmp;
+  for(i=-max;i<=max;i++){
+    iTmp=i*i*i;
+    for(j=i;j<=max;j++){
+      jTmp=j*j*j;
+      for(k=j;k<=max;k++){
+	if(iTmp+jTmp+k*k*k==target)printf("(%d,%d,%d),",i,j,k);
+      }
+    }
+  }
+  return 0;
+}

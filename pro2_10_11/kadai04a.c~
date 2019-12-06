@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main(void){
+  int x=1,y=2;
+  int *x_pt;
+  printf("xのアドレス            (&x):%p\n",&x);
+  printf("xの値                  (x):%d\n",x);
+
+  x_pt=&x;
+  printf("ポインタx_ptの値      (x_pt):%p\n",x_pt);
+  prinff("x_ptが指すメモリの値 (*x_pt):%d\n",*x_pt);
+
+  y=*x_pt; 
+  printf("xの値                   (x):%d\n",x);
+  printf("yの値                   (y):%d\n",y);
+
+  *x_pt=0;
+  printf("xの値                  (x):%d\n",x);
+  printf("yの値                   (y):%d\n",y);
+  prinff("x_ptが指すメモリの値 (*x_pt):%d\n",*x_pt);
+  return 0;
+}

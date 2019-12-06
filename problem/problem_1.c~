@@ -1,0 +1,22 @@
+//追加課題1 2019/10/4 19d8104026j 可児憲太郎
+#define countNum 10
+#define firstNum 1.4
+#define formula k*k-2
+#define miniNum 0.0000000001
+double numerical_diff(double x,double h){
+  double k=x+h;
+  double child1=formula;
+  k=x;
+  double child2=formula;
+  return (child1-child2)/h;
+}
+int main(void){
+  double k=1.4,l;
+  int i;
+  for(i=0;i<countNum;i++){
+    l=(y-(formula))/(numerical_diff(k,miniNum))+k;
+    k=l;
+    printf("%d:%.15lf",i+1,k);
+  }
+  return 0;
+}

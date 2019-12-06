@@ -1,0 +1,18 @@
+#include<stdio.h>
+#define MAX 102
+int main(void){
+    int zahlen[MAX]={1,1};
+    int i,j;
+    for(i=2;i<MAX;i++){
+        if(!zahlen[i]){
+            for(j=i*2;j<MAX;j+=i){
+                zahlen[j]=1;
+            }
+        }
+    }
+    for(i=4;i<MAX;i++){
+        if(!zahlen[i]&&!zahlen[i-2]){
+            printf("(%d,%d),",i-2,i);
+        }
+    }
+}

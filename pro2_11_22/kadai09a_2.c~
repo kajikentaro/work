@@ -1,0 +1,65 @@
+#include<stdio.h>
+#include<stdlib.h>
+int coin500;
+int is1k(){
+    double tmp=(rand()+1.0)/(RAND_MAX+1.0);
+    if(tmp>0.4){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+int passed_people(){
+    int i;
+    for(i=1;i<=20;i++){
+        if(is1k()){
+            coin500--;
+        }else{
+            coin500++;
+        }
+        if(coin500<=0){
+            break;
+        }
+    }
+    return i;
+}
+int main(void){
+    int a;
+    scanf("%d",&a);
+
+    int i;
+    int record[22]={};
+    for(i=0;i<1000000;i++){
+        coin500=a;
+        int tmp=passed_people();
+        //printf("%d ",tmp);
+        record[tmp]++;
+    }
+    for(i=1;i<=21;i++){
+      printf("%d %lf\n",i,(double)record[i]/1000000);
+    }
+}  
+/*
+1
+1 0.600103
+2 0.000000
+3 0.144101
+4 0.000000
+5 0.069009
+6 0.000000
+7 0.041526
+8 0.000000
+9 0.027944
+10 0.000000
+11 0.020221
+12 0.000000
+13 0.015230
+14 0.000000
+15 0.011707
+16 0.000000
+17 0.009462
+18 0.000000
+19 0.007644
+20 0.000000
+21 0.053053
+*/

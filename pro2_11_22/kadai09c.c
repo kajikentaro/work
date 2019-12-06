@@ -1,0 +1,41 @@
+//課題09c 2019/11/22(FRI) 19d8104026j 可児憲太郎
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+double length(double x,double y,double a,double b){
+  return sqrt((x-a)*(x-a)+(y-b)*(y-b));
+}
+int function(int n){
+  int i;
+  int inner_point=0;
+  for(i=0;i<n;i++){
+    double x=(rand()+1.0)/(RAND_MAX+1.0);
+    double y=(rand()+1.0)/(RAND_MAX+1.0);
+    if(length(x,y,0,0)<=1||length(x,y,1,0)<=1){
+      //円の中
+      inner_point++;
+    }
+  }
+  double estimated=(double)inner_point/n;
+  double margin=(double)estimated-(M_PI/6+sqrt(3)/4);
+  printf("n:%9d 推定値 %lf 誤差 %lf\n",n,estimated,margin);  
+}
+int main(void){
+  int loop_num=1;
+  int i;
+  for(i=0;i<8;i++){
+    loop_num*=10;
+    function(loop_num);
+  }
+  return 0;
+}
+/*
+n:       10 推定値 1.000000 誤差 0.043389
+n:      100 推定値 0.950000 誤差 -0.006611
+n:     1000 推定値 0.960000 誤差 0.003389
+n:    10000 推定値 0.956300 誤差 -0.000311
+n:   100000 推定値 0.956400 誤差 -0.000211
+n:  1000000 推定値 0.956573 誤差 -0.000038
+n: 10000000 推定値 0.956550 誤差 -0.000062
+n:100000000 推定値 0.956640 誤差 0.000029
+*/

@@ -1,0 +1,21 @@
+#include<stdio.h>
+int ends_with(int a,int b){
+  while(1){
+    if(b%10!=a%10)return 0;
+    b/=10;a/=10;
+    if(b==0)return 1;
+  }
+}
+int main(void){
+  int a,b;
+  printf("aとbを入力してください:");
+  scanf("%d %d",&a,&b);
+  int result=ends_with(a,b);
+  printf("%dは%dで",a,b);
+  if(ends_with(a,b)){
+    puts("終わりました");
+  }else{
+    puts("終わりませんでした");
+  }
+  return 0;
+}

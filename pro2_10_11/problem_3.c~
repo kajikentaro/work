@@ -1,0 +1,23 @@
+#include<stdio.h>
+double my_sin(double x,int N){
+    double sum=0,item;
+    int i,j;
+    for(i=1;i<(2*N);i+=2){
+        item=1;
+        for(j=0;j<i;j++){
+            item *=x;
+            item /=(i-j);
+        }
+        printf("item =%.15lf\n",item);
+        if(i%4==1)sum+=item;
+        if(i%4==3)sum-=item;
+    }
+    printf("result:%.15lf\n",sum);
+}
+int main(void){
+    double x;
+    scanf("%lf",&x);
+    int N;
+    scanf("%d",&N);
+    my_sin(x,N);
+}
