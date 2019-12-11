@@ -1,0 +1,13 @@
+#include<stdio.h>
+#define a 2
+#define countNum 8
+#define firstNum 1.2
+int main(void){
+  double k=1.2,l;
+  int i;
+  for(i=0;i<countNum;i++){
+    l=(a+k*k)/(2*k);
+    k=l;
+    printf("%d:%.15lf",i+1,k);
+  }
+}

@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#include<time.h>
+double getLength(double x,double y){
+  return sqrt((x-0.5)*(x-0.5)+(y-0.5)*(y-0.5));
+}
+double get_also_PI(int n){
+  int i;
+  int inner_point=0;
+  for(i=0;i<max;i++){
+    double x=(rand()+1.0)/((double)RAND_MAX+1.0);
+    double y=(rand()+1.0)/((double)RAND_MAX+1.0);
+    if(getLength(x,y)<0.5){
+      inner_point++;
+    }
+  }
+  return (double)inner_point/max*4;
+  
+}
+int main(void){
+  srand((unsigned int)time(NULL));
+  int max;
+  puts("点の数nを入力してください");
+  scanf("%d",&max);
+
+  int i;
+  double sum=0;
+  double result[10];
+  for(i=0;i<10;i++){
+    double also_PI=get_also_PI(n);
+    sum+=also_PI;
+    result[i]=also_PI;
+  }
+  double ave=sum/10;
+  
+  puts("円周率の推定値の平均は");
+  printf("%lf です。\n ",ave);
+
+  double sum_=0;
+  for(i=0;i<10;i++){
+    sum_+=(result[i]-ave)*(result[i]-ave);
+  }
+  
+  puts("標準偏差は");
+  printf("%lf です。\n",sqrt(sum_/10));
+  return 0;
+}
+    
+/*
+[19D8104026J@ISE51c pro2_11_8]$ ./a.out
+点の数nを入力してください
+10000
+計算された円の面積の近似値は
+0.786300 です。0.000902 の誤差
+*/

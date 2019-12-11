@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main(void){
+    int i;
+    int sum=0;
+    for(i=0;i<3;i++){
+        int input;
+        scanf("%d",&input);
+        sum+=input;
+    }
+    printf("平均値は%fです",(double)sum/3);
+} 

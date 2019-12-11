@@ -1,0 +1,38 @@
+//課題2c 2019-9-27 19d8104026j 可児憲太郎
+#include<stdio.h>
+int main(void){
+    printf("自然数nを入力してください");
+    int n;
+    scanf("%d",&n);
+    
+    int i;
+    double max;
+    double min;
+    for(i=0;i<n;i++){
+        double input;
+	printf("%d番目の実数値を入力:",i+1);
+        scanf("%lf",&input);
+        if(i==0){
+            max=input;
+            min=input;
+            continue;
+        }
+        if(input>max){
+            max=input;
+        }
+        if(input<min){
+            min=input;
+        }
+    }
+    printf("最大値は%f最小値は%fです\n",max,min);
+    return 0;
+} 
+/*
+自然数nを入力してください5
+1番目の実数値を入力:-0.09
+2番目の実数値を入力:-1000.1
+3番目の実数値を入力:54
+4番目の実数値を入力:3555
+5番目の実数値を入力:90909090
+最大値は90909090.000000最小値は-1000.100000です
+*/
