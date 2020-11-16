@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <title>登録</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
+        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="myXMLHttpRequest.js"></script>
+    </head>
+    <body>
+        <head>
+            <h1>登録フォーム</h1>
+        </head>
+        <div class="contents">
+            <h2>名前</h2>
+            <div class="content">
+                <div class="inputName">
+                    <p>姓</p>
+                    <input id="NameFamily" placeholder="佐藤">
+                </div>
+                <div class="inputName">
+                    <p>名</p>
+                    <input id="NameLast"placeholder="太郎">
+                </div>
+            </div>
+            <div class="content">
+                <div class="inputName">
+                    <p>セイ</p>
+                    <input id="NameFamily2" placeholder="サトウ">
+                </div>
+                <div class="inputName">
+                    <p>メイ</p>
+                    <input id="NameLast2" placeholder="タロウ">
+                </div>
+            </div>
+            <div class="content">
+            <p>学科</p>
+            <select id="select">
+                <option>選択してください</option>
+                <option>aaa</option>
+                <option>bbb</option>
+                <option>ccc</option>
+            </select>
+            </div>
+            <div class="content">
+                <p>性別</p>
+                <input type="checkbox">男
+                <input type="checkbox">女
+            </div>
+            <div class="content">
+                <button onclick="submit()">提出</button>
+            </div>
+        </div>
+    </body>
+
+</html>

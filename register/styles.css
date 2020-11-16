@@ -1,0 +1,36 @@
+.contents{
+    max-width: 540px;
+    margin:0 auto;
+}
+.content{
+    text-align: center;
+}
+p{
+    text-align: left;
+    margin-bottom: 7px;
+    margin-left: 20px;
+}
+inputName > input{
+    display: block;
+    margin: 0 auto;
+    margin:auto 10px;
+}
+.inputName{
+    max-width: 350px;
+    display: inline-block;
+    margin: 0 auto;
+}
+select{
+    width:200px;
+    margin:0 auto;
+    display: block;
+}
+.gender{
+    margin: 0 auto;
+    text-align: center;
+}
+inuput{
+    background-color: red;
+    margin:0 20px;
+    background-color: red;
+}
